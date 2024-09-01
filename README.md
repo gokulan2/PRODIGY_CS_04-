@@ -1,15 +1,38 @@
-Simple Keylogger
+Keylogger by Kalmux
+Overview
+This is a simple Python keylogger that records keystrokes into a log file. The keylogger captures each key pressed on the keyboard and writes it to a file named keylog.txt. This tool is intended for educational purposes only and should not be used for any malicious activities.
 
-Create a basic keylogger program that records and logs keystrokes. Focus on logging the keys pressed and saving them to a file. (Note: Ethical considerations and permissions are crucial for projects involving keyloggers.)
+Features
+Logs Keystrokes: Records all keys pressed on the keyboard.
+Handles Special Keys: Spaces, Enter, and other special keys are handled appropriately for better readability in the log file.
+Timestamps: Logs the start time of the keylogging session.
+Error Handling: Captures and prints any exceptions that occur during file writing.
+Requirements
 
-Here's a basic keylogger program in Python. This program uses the pynput library to monitor keystrokes and save them to a log file. First, make sure you have the pynput library installed. You can install it using pip.You can do this by running the following command in your terminal of VS Code:
+Python 3.x
+pynput library
 
-'pip install pynput'
+Installation
+Install dependencies:
 
-After installing the library, you can run the code. It will start recording your keystrokes and saving them to a file named 'keylog.txt' in the same directory as your Python script.
+You need to have pynput installed. You can install it via pip:
 
-This program first defines the on_key_press function, which is called whenever a key is pressed. The function gets the current timestamp and writes it to a log file along with the key that was pressed. The main function prints a message to the console indicating that the user can stop logging by pressing Ctrl+C. It then creates a listener using the keyboard.Listener class and passes the on_key_press function as the on_press parameter. This causes the on_key_press function to be called whenever a key is pressed. Finally, the listener is started using the join method.
+pip install pynput
+Usage
+Run the keylogger:
 
-Note that this program logs all keystrokes, including special keys like Ctrl, Alt, and Shift. It also logs keys that are pressed while the keylogger is running, so it may log unexpected keys if the user interacts with the console while the keylogger is running.
+Simply execute the Python script:
 
-Additionally, it's important to note that creating and using keyloggers can be illegal in some jurisdictions and can be considered a violation of privacy. This code is intended for educational purposes only.
+python keylogger.py
+Stop the keylogger:
+
+To stop the keylogger, press Ctrl + C in the terminal where the script is running.
+
+View logs:
+
+The keystrokes will be recorded in a file named keylog.txt located in the same directory as the script. You can open this file to view the logged keystrokes.
+
+Code Explanation
+write_log(data): Writes the captured keystrokes to keylog.txt.
+keylog(key): Processes each key press, formatting special keys like Space and Enter, then logs the key.
+listen(): Initializes the keylogger, starts recording keystrokes, and logs the start time of the session.
